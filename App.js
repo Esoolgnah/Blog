@@ -15,8 +15,8 @@ function App() {
         <div>개발 Blog</div>
       </div>
     <div className = "list">
-      <h3> { 글제목[0] } <span onClick={ ()=> {console.log('1 + 1')} }>👍🏻</span></h3>
-      <p>2월 17일 발행</p>
+      <h3> { 글제목[0] } <span onClick={ ()=> {console.log(1)} }>👍🏻</span></h3>
+      <p>2월 15일 발행</p>
       <hr/>
     </div>
     <div className = "list">
@@ -26,7 +26,7 @@ function App() {
     </div>
     <div className = "list">
       <h3> { 글제목[2] }</h3>
-      <p>2월 15일 발행</p>
+      <p>2월 17일 발행</p>
       <hr/>
     </div>
     </div>

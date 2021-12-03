@@ -34,6 +34,12 @@ function App() {
 
      <Modal />
      
+     {
+       1 < 3
+       ? console.log('맞아요')
+       : console.log('틀려요')
+     }
+
     </div>
   );
 }

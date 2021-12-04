@@ -9,6 +9,8 @@ function App() {
   let [글제목, 글제목변경] = useState(['남자코트 추천', '강남 우동 맛집','파이썬 독학']);
   let [따봉, 따봉변경] = useState();
 
+  let [modal, modal변경] = useState(false);
+
   // function 글순서바꾸기(){
   //   let newArray = [...글제목];
   //   newArray.sort();
@@ -24,7 +26,7 @@ function App() {
         <h3> { 글제목[0]} <span onClick={ ()=> { 따봉변경( 따봉 + 1) }}>👍🏻</span> {따봉}</h3>
         <p>2월 16일 발행</p>
         <hr/>
-        <h3> { 글제목[1]} </h3>
+        <h3 > { 글제목[1]} </h3>
         <p>2월 17일 발행</p>
         <hr/>
         <h3> { 글제목[2]} </h3>
@@ -32,14 +34,13 @@ function App() {
         <hr/>
       </div>
 
-     <Modal />
      
-     {
-       1 < 3
-       ? console.log('맞아요')
-       : console.log('틀려요')
-     }
-
+    <button onClick={() => {modal변경(modal===false ? modal = true : modal = false)}} >버튼</button>
+    {
+    modal === true
+    ?<Modal/>
+    :null
+    }
     </div>
   );
 }

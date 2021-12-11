@@ -7,15 +7,15 @@ function App() {
   let [따봉, 따봉변경] = useState(0);
   let [modal, modal변경] = useState(false);
   let [누른제목, 누른제목변경] = useState(0);
-
   let [입력값, 입력값변경] = useState('');
-
+  
   return (
     <div className="App">
       <div className="black-nav">
         <div>개발 Blog</div>
       </div>
       {
+        
         글제목.map((글, idx) =>{
           return(
             <div className="list" key={idx}>
@@ -24,11 +24,18 @@ function App() {
               <p>2월 18일 발행</p>
               <hr/>
             </div>
-
           )
         })
       }
-      {/* <input onChange = { (e) => {입력값변경(e.target.value) } }></input> */}
+      
+      <div className = 'publish'>
+        <input onChange={ (e)=>{입력값변경(e.target.value) } }></input>
+        <button onClick={ ()=>{
+          let 글제목복사 = 글제목.slice();
+          글제목복사.unshift(입력값);
+          글제목변경(글제목복사);
+        }}>저장</button>
+      </div>
 
       <button onClick = {() => {modal변경(!modal)}}>열고 닫기</button>
       {

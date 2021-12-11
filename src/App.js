@@ -1,6 +1,6 @@
 /* eslint-disable */
 import './App.css';
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
   let [글제목, 글제목변경] = useState(['남자코트 추천', '강남 우동 맛집', '파이썬 독학']);
@@ -37,6 +37,8 @@ function App() {
         }}>저장</button>
       </div>
 
+      <Profile />
+
       <button onClick = {() => {modal변경(!modal)}}>열고 닫기</button>
       {
         modal === true
@@ -44,8 +46,10 @@ function App() {
         :null
       }
     </div>
-  )
+  ) 
 }
+
+
 function Modal(props){
   return (
     <div className = "modal">
@@ -54,6 +58,27 @@ function Modal(props){
       <p>상세 내용</p>
     </div>
   )
+}
+
+class Profile extends React.Component {
+  constructor(){
+    super();
+    this.state = {name:'Kim', age: 30}
+
+  }
+  changeName = () =>{
+    this.setState( {name: 'Park'} )
+  }
+  render(){
+    return(
+      <div>
+        <h3>프로필입니다</h3>
+        <p>저는 { this.state.name } 입니다.</p>
+        <button onClick = { this.changeName }>버튼</button>
+      </div>
+    )
+  }
+
 }
 
 export default App;
